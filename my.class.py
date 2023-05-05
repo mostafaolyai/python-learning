@@ -1,11 +1,12 @@
 class BagOfWord:
     def __init__(self):
-        self.words = {}
+        # self.words = {}
+        self.__words = {}  # deny access from out => private
 
     def add(self, word):
-        self.words[word.lower()] = self.words.get(word.lower(), 0)+1
+        self.__words[word.lower()] = self.__words.get(word.lower(), 0)+1
 
 
 word = BagOfWord()
 word.add('Mostafa')
-print(word.words)
+print(word.__words)
